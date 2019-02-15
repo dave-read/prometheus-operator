@@ -1,0 +1,41 @@
+#apiVersion: monitoring.coreos.com/v1
+#kind: ServiceMonitor
+#metadata:
+#  labels:
+#    chart: mixer-1.0.5
+#    release: istio
+#    istio: mixer
+#  name: istio-telemetry
+#  namespace: monitoring
+#spec:
+#  endpoints:
+#  - interval: 15s
+#    port: prometheus
+#  - interval: 15s
+#    port: http-monitoring
+#  jobLabel: istio
+#  namespaceSelector:
+#    matchNames:
+#    - istio-system
+#  selector:
+#    matchLabels:
+#      chart: mixer-1.0.5
+#      release: istio
+#      istio: mixer
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: istio
+  namespace: monitoring
+spec:
+  endpoints:
+  - interval: 15s
+    port: prometheus
+  namespaceSelector:
+    matchNames:
+    - istio-system
+  selector:
+    matchLabels:
+      istio: mixer
+      istio-mixer-type: telemetry
