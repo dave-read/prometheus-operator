@@ -69,6 +69,27 @@ spec:
         - mountPath: /grafana-dashboard-definitions/0/statefulset
           name: grafana-dashboard-statefulset
           readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-galley
+          name: grafana-dashboard-istio-galley
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-mesh
+          name: grafana-dashboard-istio-mesh
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-performance
+          name: grafana-dashboard-istio-performance
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-service
+          name: grafana-dashboard-istio-service
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-workload
+          name: grafana-dashboard-istio-workload
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-mixer
+          name: grafana-dashboard-istio-mixer
+          readOnly: false
+        - mountPath: /grafana-dashboard-definitions/0/istio-pilot
+          name: grafana-dashboard-istio-pilot
+          readOnly: false
       nodeSelector:
         beta.kubernetes.io/os: linux
       securityContext:
@@ -111,3 +132,24 @@ spec:
       - configMap:
           name: grafana-dashboard-statefulset
         name: grafana-dashboard-statefulset
+      - configMap:
+          name: grafana-dashboard-istio-galley
+        name: grafana-dashboard-istio-galley
+      - configMap:
+          name: grafana-dashboard-istio-mesh
+        name: grafana-dashboard-istio-mesh
+      - configMap:
+          name: grafana-dashboard-istio-performance
+        name: grafana-dashboard-istio-performance
+      - configMap:
+          name: grafana-dashboard-istio-service
+        name: grafana-dashboard-istio-service
+      - configMap:
+          name: grafana-dashboard-istio-workload
+        name: grafana-dashboard-istio-workload
+      - configMap:
+          name: grafana-dashboard-istio-mixer
+        name: grafana-dashboard-istio-mixer
+      - configMap:
+          name: grafana-dashboard-istio-pilot
+        name: grafana-dashboard-istio-pilot
